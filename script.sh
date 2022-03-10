@@ -9,7 +9,7 @@ while true;do
       if [ $OFFLINE_CACHE = true ]; then
          OFFLINE_CACHE=false
 
-         ONLINE_SERVICE_MESSAGE=$(curl https://raw.githubusercontent.com/WosaFramework/ServiceWatcher/main/info.json | jq '.KNOWN_ONLINE_REASON')
+         ONLINE_SERVICE_MESSAGE=$(curl https://raw.githubusercontent.com/WosaFramework/ServiceWatcher/main/info.json | jq '.ONLINE_REPORT')
          ONLINE_SERVICE_MESSAGE=`sed -e 's/^"//' -e 's/"$//' <<<"$ONLINE_SERVICE_MESSAGE"`
 
          ONLINE_MESSAGE=":white_check_mark: Wosa *services* is now back online and operational again."
@@ -32,7 +32,7 @@ while true;do
       if [ $OFFLINE_CACHE = false ]; then
          OFFLINE_CACHE=true
 
-         OFFLINE_SERVICE_MESSAGE=$(curl https://raw.githubusercontent.com/WosaFramework/ServiceWatcher/main/info.json | jq '.ONLINE_REPORT')
+         OFFLINE_SERVICE_MESSAGE=$(curl https://raw.githubusercontent.com/WosaFramework/ServiceWatcher/main/info.json | jq '.KNOWN_OFFLINE_REASON')
          OFFLINE_SERVICE_MESSAGE=`sed -e 's/^"//' -e 's/"$//' <<<"$OFFLINE_SERVICE_MESSAGE"`
 
          OFFLINE_MESSAGE=":warning: Wosa *service server* is currently **offline** meaning authentication is unavailable in the current moment."
