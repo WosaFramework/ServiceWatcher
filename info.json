@@ -1,4 +1,4 @@
 {
-    "KNOWN_OFFLINE_REASON": "NONE",
-    "ONLINE_REPORT": "NONE"
+    "KNOWN_OFFLINE_REASON": "A important security update is being performed on the system.",
+    "ONLINE_REPORT": "System update is now finished."
 }
