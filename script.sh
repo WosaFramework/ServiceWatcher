@@ -5,7 +5,7 @@ INFO_HANDLER="https://raw.githubusercontent.com/WosaFramework/ServiceWatcher/mai
 OFFLINE_CACHE=false
 
 while true;do
-   if curl --connect-timeout 1 -I $SERVER_ADDRESS 2>&1 | grep -w "200"; then
+   if curl --connect-timeout 10 -I $SERVER_ADDRESS 2>&1 | grep -w "200"; then
       if [ $OFFLINE_CACHE = true ]; then
          OFFLINE_CACHE=false
 
